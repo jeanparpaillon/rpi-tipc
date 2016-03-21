@@ -46,7 +46,8 @@ ARCHIVE = $(ARCHIVE_DIR).tar.xz
 
 all: $(ARCHIVE)
 
-$(ARCHIVE): $(ARCHIVE_DIR)
+$(ARCHIVE): $(PREREQS)
+	$(MAKE) $(ARCHIVE_DIR)
 	cd $< && tar cvf - . | xz > ../$@
 
 $(ARCHIVE_DIR): $(MODULE) $(TIPC_CONFIG)
@@ -92,4 +93,4 @@ distclean:
 	-rm -rf $(LINUX_DIR)
 	-rm -rf $(ARCHIVE) $(ARCHIVE_DIR) $(TIPC_DIR)
 
-.PHONY: install-headers install-build-essential install-tipcdeps clean distclean $(ARCHIVE_DIR)
+.PHONY: install-headers install-buildessential install-tipcdeps clean distclean $(ARCHIVE_DIR)
