@@ -18,11 +18,8 @@ LINUX_BRANCH = rpi-4.1.y
 TIPC_DIR = tipcutils
 TIPC_SRC = $(TIPC_DIR)/tipc-config/tipc-config.c
 TIPC_URL = git://tipc.git.sourceforge.net/gitroot/tipc/tipcutils
-TIPC_TAG = tipcutils2.0
+TIPC_TAG = v2.1.1
 TIPC_CONFIG = tipcutils/tipc-config/tipc-config
-
-PATH := $(XCOMPILE):$(PATH)
-export PATH
 
 KERNEL=kernel7
 JOBS=$(shell grep ^processor /proc/cpuinfo | wc -l)
