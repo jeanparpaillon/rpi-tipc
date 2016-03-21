@@ -83,7 +83,7 @@ install-headers:
 	apt install linux-headers-$(RELEASE)
 
 install-buildessential:
-	apt install build-essential libtool bc git
+	apt install build-essential libtool bc autoconf automake
 
 install-tipcdeps:
 	apt install libdaemon-dev libnl-3-dev
